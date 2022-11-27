@@ -1,7 +1,6 @@
 {
   "name": "jf-typeahead",
   "version": "0.0.3",
-  "private": false,
   "description": "Typeahead component done with Vue3",
   "homepage": "https://github.com/cristianpoleyJS/vue-next-typeahead#readme",
   "author": {
@@ -57,10 +56,6 @@
     "dist/vue-next-typeahead.common.js"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com:cristianpoleyJS/vue-next-typeahead.git"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
