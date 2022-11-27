@@ -1,6 +1,6 @@
 {
-  "name": "vue-next-typeahead",
-  "version": "0.0.2",
+  "name": "jf-typeahead",
+  "version": "0.0.3",
   "private": false,
   "description": "Typeahead component done with Vue3",
   "homepage": "https://github.com/cristianpoleyJS/vue-next-typeahead#readme",
@@ -16,7 +16,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build --target lib --name vue-next-typeahead ./src/components/index.js",
-    "deploy": "npm run build && npm publish --access public"
+    "deploy": "npm run build && npm publish"
   },
   "dependencies": {
     "vue": "^3.0.0"

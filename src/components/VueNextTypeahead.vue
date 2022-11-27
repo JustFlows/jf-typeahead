@@ -206,7 +206,7 @@ export default {
     reset () {
       this.showDropdown = false
       this.searching = false
-      this.dataInput = ''
+      // this.dataInput = ''
       this.$emit('reset')
       this.$emit('update:input', '')
     }
