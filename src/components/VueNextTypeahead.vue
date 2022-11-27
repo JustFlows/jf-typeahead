@@ -208,7 +208,7 @@ export default {
       this.searching = false
       // this.dataInput = ''
       this.$emit('reset')
-      this.$emit('update:input', '')
+      // this.$emit('update:input', '')
     }
   }
 }
