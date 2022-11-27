@@ -18,6 +18,7 @@
       <Field
         type="text"
         autocomplete="false"
+        :class="{ 'is-invalid': feedback }"
         :name="formName ?? ''"
         :placeholder="placeholder"
         :value="dataInput"
@@ -43,6 +44,9 @@
         <slot name="no-results">{{ noResultsText }}</slot>
       </li>
     </ul>
+    <br>
+    <div class="invalid-feedback">{{feedback}}</div>
+
   </span>
 </template>
 
@@ -52,6 +56,9 @@ export default {
   name: 'VueNextTypeahead',
   props: {
     apiUrl: {
+      type: String
+    },
+    feedback: {
       type: String
     },
     formName: {
