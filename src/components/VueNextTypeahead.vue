@@ -20,7 +20,6 @@
         autocomplete="false"
         :placeholder="placeholder"
         :value="dataInput"
-        @keyup.esc="reset()"
         @input="changeInput($event)"
         @paste="changeInput($event)"
         @focus="onFocusin()"
@@ -207,7 +206,7 @@ export default {
       this.showDropdown = false
       this.searching = false
       // this.dataInput = ''
-      this.$emit('reset')
+      // this.$emit('reset')
       // this.$emit('update:input', '')
     }
   }
