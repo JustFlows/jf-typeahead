@@ -1,5 +1,5 @@
 {
-  "name": "jf-typeahead",
+  "name": "@justflows/jf-typeahead",
   "version": "0.0.5",
   "description": "Typeahead component done with Vue3",
   "homepage": "https://github.com/cristianpoleyJS/vue-next-typeahead#readme",
