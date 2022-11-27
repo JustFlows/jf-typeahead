@@ -15,15 +15,16 @@
       :style="{
         'background': searching || loadingParentComponent ? '#FAFAFA' : '#FFFFFF'
       }">
-      <input
+      <Field
         type="text"
         autocomplete="false"
+        :name="formName ?? ''"
         :placeholder="placeholder"
         :value="dataInput"
         @input="changeInput($event)"
         @paste="changeInput($event)"
         @focus="onFocusin()"
-        @blur="onFocusout()">
+        @blur="onFocusout()" />
       <i class="ico-search" v-if="!searching && !loadingParentComponent" />
       <i class="ico-loader" v-else />
     </div>
@@ -46,12 +47,15 @@
 </template>
 
 <script>
+import { Field } from 'vee-validate'
 export default {
   name: 'VueNextTypeahead',
   props: {
     apiUrl: {
-      type: String,
-      required: true
+      type: String
+    },
+    formName: {
+      type: String
     },
     input: {
       type: String,
@@ -109,6 +113,9 @@ export default {
       timeout: '',
       dataInput: ''
     }
+  },
+  components: {
+    Field
   },
   watch: {
     'input' (newVal) {
