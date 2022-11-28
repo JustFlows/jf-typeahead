@@ -118,7 +118,7 @@ export default {
       focusing: false,
       showDropdown: true,
       timeout: '',
-      dataInput: ''
+      dataInput: this.input ?? ''
     }
   },
   components: {
