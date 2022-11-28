@@ -21,7 +21,7 @@
         :class="{ 'is-invalid': feedback }"
         :name="formName ?? ''"
         :placeholder="placeholder"
-        :value="dataInput"
+        v-model="dataInput"
         @input="changeInput($event)"
         @paste="changeInput($event)"
         @focus="onFocusin()"
