@@ -1,6 +1,6 @@
 {
   "name": "@justflows/jf-typeahead",
-  "version": "0.3.8",
+  "version": "0.4.8",
   "description": "Typeahead component done with Vue3",
   "homepage": "https://github.com/cristianpoleyJS/vue-next-typeahead#readme",
   "author": {
