@@ -1,6 +1,6 @@
 {
   "name": "@justflows/jf-typeahead",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Typeahead component done with Vue3",
   "homepage": "https://github.com/cristianpoleyJS/vue-next-typeahead#readme",
   "author": {
@@ -8,7 +8,7 @@
     "email": "cristianpoleygonzalez@gmail.com"
   },
   "main": "dist/vue-next-typeahead.common.js",
-  "module": "dist/vue-next-typeahead.umd.min.js",
+  "module": "dist/vue-next-typeahead.common.js",
   "unpkg": "dist/vue-next-typeahead.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
