@@ -309,8 +309,8 @@ export default {
 
       // Focus state
       &--focusing {
-          box-shadow: 0px 0px 8px 0px #FF7300 20%;
-          border: 1px solid #FF7300;
+          box-shadow: 0px 0px 8px 0px #0271A9 20%;
+          border: 1px solid #0271A9;
           box-sizing: border-box;
           box-shadow: 0px 0px 8px rgba(255, 115, 0, 0.2);
           .ico-search {
