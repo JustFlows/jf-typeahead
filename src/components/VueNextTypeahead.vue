@@ -230,7 +230,6 @@ export default {
 
 <style scoped lang="scss">
   .vue-next-typeahead {
-    width: 460px;
     display: block;
     position: relative;
 
