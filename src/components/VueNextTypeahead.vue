@@ -55,8 +55,8 @@ import { Field } from 'vee-validate'
 export default {
   name: 'VueNextTypeahead',
   props: {
-    apiUrl: {
-      type: String
+    asyncFunc: {
+      type: Function
     },
     feedback: {
       type: String
@@ -150,7 +150,7 @@ export default {
         clearTimeout(this.timeout)
 
         this.timeout = setTimeout(async () => { // Begin timeout
-          const response = await fetch(this.apiUrl)
+          const response = await this.asyncFunc()
           this.$emit('response', response)
           clearTimeout(this.timeout) // Clean interval
           this.showDropdown = true
@@ -312,7 +312,7 @@ export default {
           box-shadow: 0px 0px 8px 0px #0271A9 20%;
           border: 1px solid #0271A9;
           box-sizing: border-box;
-          box-shadow: 0px 0px 8px rgba(255, 115, 0, 0.2);
+          box-shadow: 0px 0px 8px rgba(105, 103, 229, 0.2);
           .ico-search {
             background-image: url('../assets/search-orange.svg');
           }
