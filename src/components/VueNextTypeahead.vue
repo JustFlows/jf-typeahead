@@ -37,7 +37,7 @@
           v-for="(item, ix) in items"
           :key="ix"
           @click="clickItem(item)">
-          <span v-html="keyItem ? highlight(item[keyItem], dataInput) : item" />
+          <span v-html="keyItem ? highlight(item[keyItem], dataInput) : item.label" />
         </li>
       </template>
       <li v-else class="li-no-results">
@@ -199,6 +199,7 @@ export default {
      */
     clickItem (item) {
       this.$emit('hit', item)
+      this.dataInput = item.label
       this.reset()
     },
 
