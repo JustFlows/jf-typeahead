@@ -15,7 +15,7 @@
       :style="{
         'background': searching || loadingParentComponent ? '#FAFAFA' : '#FFFFFF'
       }">
-      <Field
+      <input
         type="text"
         autocomplete="false"
         :class="{ 'is-invalid': feedback }"
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { Field } from 'vee-validate'
+import { useField } from 'vee-validate'
 export default {
   name: 'VueNextTypeahead',
   props: {
@@ -113,6 +113,9 @@ export default {
     }
   },
   data () {
+    useField(this.formName ?? '', undefined, {
+      initialValue: this.input
+    })
     return {
       searching: false,
       focusing: false,
@@ -120,9 +123,6 @@ export default {
       timeout: '',
       dataInput: this.input ?? ''
     }
-  },
-  components: {
-    Field
   },
   watch: {
     'input' (newVal) {
