@@ -21,7 +21,7 @@
         :class="{ 'is-invalid': feedback }"
         :name="formName ?? ''"
         :placeholder="placeholder"
-        v-model="dataInput"
+        :value="value"
         @input="changeInput($event)"
         @paste="changeInput($event)"
         @focus="onFocusin()"
@@ -30,14 +30,14 @@
       <i class="ico-loader" v-else />
     </div>
     <ul
-      v-if="dataInput.length && !searching && !loadingParentComponent && showDropdown"
+      v-if="value.length && !searching && !loadingParentComponent && showDropdown"
       class="vue-next-typeahead__dropdown">
       <template v-if="items.length">
         <li
           v-for="(item, ix) in items"
           :key="ix"
           @click="clickItem(item)">
-          <span v-html="keyItem ? highlight(item[keyItem], dataInput) : item.label" />
+          <span v-html="keyItem ? highlight(item[keyItem], value) : item.label" />
         </li>
       </template>
       <li v-else class="li-no-results">
@@ -64,9 +64,8 @@ export default {
     formName: {
       type: String
     },
-    input: {
-      type: String,
-      default: ''
+    modelValue: {
+      type: String
     },
     title: {
       type: String,
@@ -113,20 +112,16 @@ export default {
     }
   },
   data () {
-    useField(this.formName ?? '', undefined, {
-      initialValue: this.input
+    const { value, handleChange } = useField(this.formName ?? '', undefined, {
+      initialValue: this.modelValue
     })
     return {
       searching: false,
       focusing: false,
       showDropdown: true,
       timeout: '',
-      dataInput: this.input ?? ''
-    }
-  },
-  watch: {
-    'input' (newVal) {
-      this.dataInput = newVal
+      handleChange,
+      value
     }
   },
   mounted () {
@@ -170,10 +165,11 @@ export default {
      * When you write here the search event is triggered.
      */
     changeInput (event) {
+      this.handleChange(event)
       if (event.target && event.target.value && event.target.value.length >= this.minChars) {
         this.search()
       }
-      this.$emit('update:input', event.target.value)
+      this.$emit('update:modelValue', event.target.value)
       if (event.target && event.target.value.length === 0) {
         this.reset()
       }
@@ -199,7 +195,7 @@ export default {
      */
     clickItem (item) {
       this.$emit('hit', item)
-      this.dataInput = item.label
+      this.value = item.label
       this.reset()
     },
 
@@ -220,7 +216,6 @@ export default {
     reset () {
       this.showDropdown = false
       this.searching = false
-      // this.dataInput = ''
       // this.$emit('reset')
       // this.$emit('update:input', '')
     }
