@@ -19,7 +19,7 @@
         type="text"
         autocomplete="false"
         :class="{ 'is-invalid': feedback }"
-        :name="formName ?? ''"
+        :name="formName"
         :placeholder="placeholder"
         :value="value"
         @input="changeInput($event)"
