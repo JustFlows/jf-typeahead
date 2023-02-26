@@ -316,6 +316,7 @@ export default {
 
     &__dropdown {
       border: 1px solid #D2D2D2;
+      background-color: #FFFFFF;
       list-style: none;
       width: calc(100% - 2px);
       padding: 16px 0 0;
