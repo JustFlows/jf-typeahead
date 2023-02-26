@@ -23,7 +23,6 @@
         :placeholder="placeholder"
         :value="value"
         @input="changeInput($event)"
-        @paste="changeInput($event)"
         @focus="onFocusin()"
         @blur="onFocusout()" />
       <i class="ico-search" v-if="!searching && !loadingParentComponent" />
