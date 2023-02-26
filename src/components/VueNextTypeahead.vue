@@ -229,7 +229,7 @@ export default {
     position: relative;
 
     &__title {
-      font-size: 16px;
+      font-size: 14px;
       font-style: normal;
       font-weight: 600;
       line-height: 22px;
@@ -253,7 +253,7 @@ export default {
         border-radius: 0;
         border: 0;
         outline: none;
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: 22px;
@@ -263,7 +263,7 @@ export default {
         width: calc(100% - 32px);
         padding: 0;
         max-height: 100%;
-        color: #404040;
+        color: #1e2022;
         background: transparent;
 
         &::placeholder {
@@ -326,7 +326,7 @@ export default {
       > li {
         min-height: 42px;
         padding: 0 16px;
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
         letter-spacing: 0px;
         text-align: left;
